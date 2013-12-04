@@ -1,0 +1,231 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://myapp.appspot.com/_ah/api",
+  "name" : "benchresultendpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://myapp.appspot.com/_ah/spi",
+    "deadline" : 10.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "fidelb.com",
+  "ownerName" : "fidelb.com",
+  "packagePath" : "benchmark",
+  "methods" : {
+    "benchresultendpoint.getBenchResult" : {
+      "path" : "benchresult/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.fidelb.benchmark.BenchResultEndpoint.getBenchResult",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "benchresultendpoint.insertBenchResult" : {
+      "path" : "benchresult",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.fidelb.benchmark.BenchResultEndpoint.insertBenchResult",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "benchresultendpoint.removeBenchResult" : {
+      "path" : "benchresult/{id}",
+      "httpMethod" : "DELETE",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.fidelb.benchmark.BenchResultEndpoint.removeBenchResult",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "empty"
+      }
+    },
+    "benchresultendpoint.updateBenchResult" : {
+      "path" : "benchresult",
+      "httpMethod" : "PUT",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.fidelb.benchmark.BenchResultEndpoint.updateBenchResult",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "benchresultendpoint.listBenchResult" : {
+      "path" : "benchresult",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.fidelb.benchmark.BenchResultEndpoint.listBenchResult",
+      "request" : {
+        "parameters" : {
+          "cursor" : {
+            "type" : "string",
+            "required" : false
+          },
+          "limit" : {
+            "type" : "int32",
+            "required" : false
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "BenchResult" : {
+        "id" : "BenchResult",
+        "type" : "object",
+        "properties" : {
+          "key" : {
+            "$ref" : "Key"
+          },
+          "deviceName" : {
+            "type" : "string"
+          },
+          "deviceCPU" : {
+            "type" : "string"
+          },
+          "deviceGPU" : {
+            "type" : "string"
+          },
+          "deviceRAM" : {
+            "type" : "string"
+          },
+          "deviceResult" : {
+            "type" : "integer"
+          }
+        }
+      },
+      "Key" : {
+        "id" : "Key",
+        "type" : "object",
+        "properties" : {
+          "kind" : {
+            "type" : "string"
+          },
+          "appId" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "parent" : {
+            "$ref" : "Key"
+          },
+          "complete" : {
+            "type" : "boolean"
+          },
+          "namespace" : {
+            "type" : "string"
+          }
+        }
+      },
+      "CollectionResponse_BenchResult" : {
+        "id" : "CollectionResponse_BenchResult",
+        "type" : "object",
+        "properties" : {
+          "items" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "BenchResult"
+            }
+          },
+          "nextPageToken" : {
+            "type" : "string"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.fidelb.benchmark.BenchResultEndpoint.getBenchResult" : {
+        "response" : {
+          "$ref" : "BenchResult"
+        }
+      },
+      "com.fidelb.benchmark.BenchResultEndpoint.insertBenchResult" : {
+        "request" : {
+          "$ref" : "BenchResult"
+        },
+        "response" : {
+          "$ref" : "BenchResult"
+        }
+      },
+      "com.fidelb.benchmark.BenchResultEndpoint.removeBenchResult" : {
+      },
+      "com.fidelb.benchmark.BenchResultEndpoint.updateBenchResult" : {
+        "request" : {
+          "$ref" : "BenchResult"
+        },
+        "response" : {
+          "$ref" : "BenchResult"
+        }
+      },
+      "com.fidelb.benchmark.BenchResultEndpoint.listBenchResult" : {
+        "response" : {
+          "$ref" : "CollectionResponse_BenchResult"
+        }
+      }
+    }
+  }
+}
