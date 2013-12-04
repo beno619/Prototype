@@ -1,13 +1,13 @@
 {
   "files": [
     {
-      "downloadUrl": "/downloads/messageEndpoint/v1/20131204142526/java/1.16.0-rc/fidelb.com-messageEndpoint-v1-20131204142526-java-1.16.0-rc-sources.jar", 
-      "path": "fidelb.com-messageEndpoint-v1-20131204142526-java-1.16.0-rc-sources.jar", 
+      "downloadUrl": "/downloads/messageEndpoint/v1/20131204193603/java/1.16.0-rc/fidelb.com-messageEndpoint-v1-20131204193603-java-1.16.0-rc-sources.jar", 
+      "path": "fidelb.com-messageEndpoint-v1-20131204193603-java-1.16.0-rc-sources.jar", 
       "type": "source", 
-      "timestamp": "2013-12-04 14:25"
+      "timestamp": "2013-12-04 19:36"
     }, 
     {
-      "path": "fidelb.com-messageEndpoint-v1-20131204142526-java-1.16.0-rc.jar.properties", 
+      "path": "fidelb.com-messageEndpoint-v1-20131204193603-java-1.16.0-rc.jar.properties", 
       "type": "android.properties"
     }
   ], 
@@ -702,5 +702,5 @@
   "packagePath": "benchmark", 
   "language_version": "1.16.0-rc", 
   "id": "messageEndpoint:v1", 
-  "revision": 20131204142526
+  "revision": 20131204193603
 }

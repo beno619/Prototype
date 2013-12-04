@@ -98,14 +98,15 @@ public class BenchResultEndpoint {
 	@ApiMethod(name = "insertBenchResult")
 	public BenchResult insertBenchResult(BenchResult benchresult) {
 		EntityManager mgr = getEntityManager();
+		/*
 		try {
-			if (containsBenchResult(benchresult)) {
-				throw new EntityExistsException("Object already exists");
+			//if (containsBenchResult(benchresult)) {
+				//throw new EntityExistsException("Object already exists");
 			}
 			mgr.persist(benchresult);
 		} finally {
 			mgr.close();
-		}
+		}*/
 		return benchresult;
 	}
 

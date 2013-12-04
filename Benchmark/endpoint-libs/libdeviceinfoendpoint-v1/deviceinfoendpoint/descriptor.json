@@ -1,13 +1,13 @@
 {
   "files": [
     {
-      "downloadUrl": "/downloads/deviceinfoendpoint/v1/20131204142531/java/1.16.0-rc/fidelb.com-deviceinfoendpoint-v1-20131204142531-java-1.16.0-rc-sources.jar", 
-      "path": "fidelb.com-deviceinfoendpoint-v1-20131204142531-java-1.16.0-rc-sources.jar", 
+      "downloadUrl": "/downloads/deviceinfoendpoint/v1/20131204193610/java/1.16.0-rc/fidelb.com-deviceinfoendpoint-v1-20131204193610-java-1.16.0-rc-sources.jar", 
+      "path": "fidelb.com-deviceinfoendpoint-v1-20131204193610-java-1.16.0-rc-sources.jar", 
       "type": "source", 
-      "timestamp": "2013-12-04 14:25"
+      "timestamp": "2013-12-04 19:36"
     }, 
     {
-      "path": "fidelb.com-deviceinfoendpoint-v1-20131204142531-java-1.16.0-rc.jar.properties", 
+      "path": "fidelb.com-deviceinfoendpoint-v1-20131204193610-java-1.16.0-rc.jar.properties", 
       "type": "android.properties"
     }
   ], 
@@ -702,5 +702,5 @@
   "packagePath": "benchmark", 
   "language_version": "1.16.0-rc", 
   "id": "deviceinfoendpoint:v1", 
-  "revision": 20131204142531
+  "revision": 20131204193610
 }
