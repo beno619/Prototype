@@ -7,7 +7,11 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.fb.benchmark2.benchresultendpoint.model.BenchResult;
@@ -17,10 +21,11 @@ import com.google.api.client.json.jackson2.JacksonFactory;
 
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnClickListener {
 	
 	private ListView deviceList;
 	private List<BenchResult> devices = null;
+	public Button start;
 
 
     @Override
@@ -28,9 +33,22 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        new ResultsTask().execute();
-    }
+        
+        start = (Button) findViewById(R.id.buttonBench);
+        start.setOnClickListener(this);
 
+    }
+    
+    
+	@Override
+	public void onClick(View v) {
+		
+		System.out.println("In On click");
+		Intent startBench = new Intent(this,RunBenchmark.class);
+		startActivity(startBench);
+        new ResultsTask().execute();
+	}
+    
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -68,5 +86,6 @@ public class MainActivity extends Activity {
 		}
     	
     }
-    
+
+
 }

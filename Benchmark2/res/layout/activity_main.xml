@@ -16,7 +16,6 @@
 
     <Button
         android:id="@+id/buttonBench"
-        android:background="#c162d8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
